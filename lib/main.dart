@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
-  // This widget is the root of your application.
+  int? a;
+
   @override
   Widget build(BuildContext context) {
+
+    int total = 10 + (a ?? 0);
+    print('Total: $total');
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
