@@ -1,32 +1,40 @@
 import 'package:flutter/material.dart';
 
+dynamic hello(){// function
+
+}
+
 void main() {
+  hello(); // function
+  MyApp app = MyApp();
+  app.hi();  // method
+
   runApp(MyApp());
 }
 
+
 class MyApp extends StatelessWidget {
+
+
+  hi(){ // method
+
+  }
+
+  int sum(int a, int b){
+    return a + b;
+  }
+
+  int add(int a, int b) => a + b;
+
+  void hello(String name) => print('Hello $name');
 
 
   @override
   Widget build(BuildContext context) {
 
-    int score = 75;
-
-    String result = "";
-
-    if(score >= 50){
-      result = "Passed";
-    }else{
-      result = "Failed";
-    }
-    print(result);
-
-
-    int s = 75;
-    String res = s >= 50 ? "Passed" : "Failed";
-    print(res);
-
-    print(s >= 50 ? "Passed" : "Failed");
+    print(sum(2, 3)); // 5
+    print(add(2, 3)); // 5
+    hello('John'); // Hello John
 
     return MaterialApp(
       title: 'Flutter Demo',
