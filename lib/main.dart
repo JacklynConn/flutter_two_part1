@@ -6,13 +6,27 @@ void main() {
 
 class MyApp extends StatelessWidget {
 
-  int? a;
 
   @override
   Widget build(BuildContext context) {
 
-    int total = 10 + (a ?? 0);
-    print('Total: $total');
+    int score = 75;
+
+    String result = "";
+
+    if(score >= 50){
+      result = "Passed";
+    }else{
+      result = "Failed";
+    }
+    print(result);
+
+
+    int s = 75;
+    String res = s >= 50 ? "Passed" : "Failed";
+    print(res);
+
+    print(s >= 50 ? "Passed" : "Failed");
 
     return MaterialApp(
       title: 'Flutter Demo',
