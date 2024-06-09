@@ -28,6 +28,20 @@ class MyApp extends StatelessWidget {
 
   void hello(String name) => print('Hello $name');
 
+  // Positional optional parameter
+  void display([String name ='no-name', String tel = 'no-tel', String address = 'no-address']) {
+    print('Name: $name');
+    print('Tel: $tel');
+    print('Address: $address');
+  }
+
+  // Named Parameter
+  void show({String name = 'no-name', String tel = 'no-tel', String address = 'no-address'}){
+    print('Name: $name');
+    print('Tel: $tel');
+    print('Address $address');
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +49,9 @@ class MyApp extends StatelessWidget {
     print(sum(2, 3)); // 5
     print(add(2, 3)); // 5
     hello('John'); // Hello John
+
+    display('Sok', '093973138', 'PP');
+    show(address: 'Sen Sok', name: "Sok", tel:  '093973138');
 
     return MaterialApp(
       title: 'Flutter Demo',
