@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
 
 class Student {
+  late int id;
+  late String name;
+
+  // Student(int id, String name) {
+  //   this.id = id;
+  //   this.name = name;
+  //
+
+  Student({required this.id, required this.name});
+
+  Student.fromDB(String db) {
+    this.id = 10;
+    this.name = "John";
+  }
+
   void show() => print('Student');
   void _display() => print("Student");
 }
@@ -12,7 +27,12 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Student s1 = Student();
+    Student s1 =
+        Student(id: 10, name: "John"); // instantiate + call to constructor
+    Student s2 = Student.fromDB("DB"); // instantiate + call to constructor
+    print(s2.name);
+    print(s1.id);
+    print(s1.name);
     s1.show();
     s1._display(); // private method can be accessed outside the class
 
