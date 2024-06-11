@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
 
 class Student {
+  late int id;
+  late String name;
+
+  // Student(int id, String name){
+  //   this.id = id;
+  //   this.name = name;
+  // }
+
+  Student({required this.id, required this.name});
+
+  Student.fromDB(String db){
+
+  }
+
   void show() => print('Student');
+
   void _display() => print("Student");
 }
 
@@ -14,11 +29,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Student s1 = Student(id: 10, name: 'Sok'); //instantiate + call to constructor
+    Student s2 = Student.fromDB("Database");
 
+    print(s1.id);
+    print(s1.name);
 
-    Student s1 = Student();
     s1.show();
-
     s1._display();
 
     return MaterialApp(
@@ -27,19 +44,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Container(
-        color: Colors.white,
-        child: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              Student student = Student();
-              student.show();
-              student._display();
-            },
-            child: const Text('Click Me'),
-          ),
-        ),
-      ),
+      home: Container(),
     );
   }
 }
